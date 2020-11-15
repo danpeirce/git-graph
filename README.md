@@ -1,6 +1,7 @@
 # git-graph
 
 Tool to create a graph from a git history showing tags, branches, stash nodes, cherry-picks.
+Forked repository to make small changes for Windows 10. Original was geared to linux. The changes were minor. 
 
 ## Requirements
 
@@ -11,15 +12,15 @@ Tool to create a graph from a git history showing tags, branches, stash nodes, c
 
 Run the following inside a git directory to write a graph description to stdout.
 
-    ./git-graph
+    python git-graph.py
 
-On linux you can use the following command to crate a graph.ps file
+On Windows 10 you can use the following command to crate a graph.png file
 
-    ./git-graph | dot -Tps -o graph.ps
+    python git-graph.py | dot -Tpng -o graph.png
 
 Example with range
 
-    ./git-graph -r a51eced..HEAD | dot -Tps -o graph.ps
+    python git-graph.py -r a51eced..HEAD | dot -Tpng -o graph.png
 
 ### Parameters
 * **-x**: to print debug output to stderr
