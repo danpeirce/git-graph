@@ -51,7 +51,7 @@ predefinedNodeColor = {}
 
 def getCommitDiff(hash):
     # get only the changed lines (starting with + or -), no line numbers, hashes, ...
-    command = 'git diff ' + hash + '^ ' + hash + ' | grep "^[-+]"'
+    command = 'git diff ' + hash + '^ ' + hash + ' | findstr "^[-+]"'
     log("Hash Command: " + command)
     diffOutput = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, universal_newlines=True)
     (diff, err) = diffOutput.communicate()
